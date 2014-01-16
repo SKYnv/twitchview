@@ -7,7 +7,8 @@ parser.add_option("-u", "--user", dest="username",
                   help="Your twitch.tv username.")
 (options, args) = parser.parse_args()
 
-url = 'https://api.twitch.tv/kraken/users/%s/follows/channels?limit=100' % options.username
+url = 'https://api.twitch.tv/kraken/users/%s/follows/channels?limit=100' % \
+      options.username
 follows = json.load(urllib2.urlopen(url))
 streamers = ''
 for val in follows['follows']:
